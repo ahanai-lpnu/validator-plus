@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator Plus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="app">
+    <div class="main-wrapper">
+        <div class="device-wrapper">
+
+            <div class="screen" style="position: relative;">
+                <img id="screen-image" src="assets/main/main.svg" alt="Екран">
+
+                <div id="date-time-display" class="date-time-overlay">
+                    <span id="time-part"></span>
+                    <span id="date-part"></span>
+                </div>
+
+                <div id="route-info-display" class="route-info-overlay">
+                    <span id="mean-part">ТРОЛЕЙБУС</span>
+                    <span id="route-number-part">Маршрут 22</span>
+                </div>
+
+            </div>
+
+            <div class="button-panel">
+            </div>
+        </div>
+
+            <div class="bottom-area">
+                <div id="drop-zone" class="drop-zone">
+                    <img src="assets/symbol-ctls.svg" alt="Zone">
+                </div>
+                <div id="draggable-item" class="drag-item">
+                    <img src="assets/card.svg" alt="Card">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 150">
+  <g id="False_entry" data-name="False entry">
+    <rect id="Bg" x="0" width="90" height="150" fill="#dc0000"/>
+    <g id="Header">
+      <text transform="translate(12.15 84.2) scale(.95 1)" fill="#fff" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8.5"><tspan x="0" y="0">Ка</tspan><tspan x="9.43" y="0" letter-spacing="0em">р</tspan><tspan x="14.33" y="0" letter-spacing="0em">тку вıдхилено</tspan></text>
+      <text id="_Пıднесıть_свою_картку_ще_раз_ı_притримайте." data-name="Пıднесıть свою картку ще раз ı притримайте." transform="translate(13.57 94.43) scale(.95 1)" fill="#fff" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="6.5"><tspan x="0" y="0">Пıднесıть свою ка</tspan><tspan x="54.16" y="0" letter-spacing="0em">р</tspan><tspan x="57.91" y="0">тку</tspan><tspan x="-.74" y="7.8">ще раз ı притримай</tspan><tspan x="59.86" y="7.8" letter-spacing="0em">т</tspan><tspan x="62.66" y="7.8">е.</tspan></text>
+      <g id="Cross_sign" data-name="Cross sign">
+        <rect x="31.63" y="35.54" width="26.74" height="5.04" transform="translate(-13.73 42.97) rotate(-45)" fill="#fff"/>
+        <rect x="42.48" y="24.7" width="5.04" height="26.74" transform="translate(-13.74 42.97) rotate(-45)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

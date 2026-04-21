@@ -1,0 +1,168 @@
+/* Базові налаштування сторінки */
+body {
+    background-color: #000;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center;     /* Центруємо по вертикалі */
+    padding: 0;
+    box-sizing: border-box           /* Відступ від країв, щоб не прилипало */
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column; /* Вертикальний стек */
+    align-items: center;    /* Центруємо все по горизонталі */
+    gap: 30px;
+    width: 100%;
+}
+
+.device-wrapper {
+    display: flex;
+    transform: scale(0.9); /* Робимо пристрій трішки меншим (90%) */
+    transform-origin: center;
+    gap: 15px;
+}
+
+.button-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;          /* Кнопки ніколи не будуть стискатися */
+}
+
+/* Віртуальний екран */
+.screen {
+    position: relative;
+    width: 360px;
+    height: 600px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+#screen-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Кнопки: прозорі, 115px, клікабельні */
+.control-btn {
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Іконка всередині кнопки */
+.btn-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Текст-заглушка (якщо SVG не завантажилось) */
+.fallback-text {
+    position: absolute;
+    font-size: 12px;
+    display: none; 
+}
+
+.btn-icon:invalid + .fallback-text {
+    display: block;
+}
+
+.date-time-overlay {
+    position: absolute;
+    top: 6px;   /* Твоє значення */
+    left: 14px;  /* Відступ від лівого краю екрана */
+    right: 12px; /* Відступ від правого краю екрана */
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between; /* Час ліворуч, дата праворуч */
+    align-items: center;
+    color: white;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: 28px;
+    pointer-events: none;
+}
+
+.date-time-overlay.hidden {
+    display: none;
+}
+
+.route-info-overlay {
+    position: absolute;
+    top: 40px;   /* Твоє значення */
+    left: 14px;  /* Відступ від лівого краю екрана */
+    right: 12px; /* Відступ від правого краю екрана */
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between; /* Час ліворуч, дата праворуч */
+    align-items: center;
+    color: #E8B423;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: 28px;
+    pointer-events: none;
+}
+
+.route-info-overlay.hidden {
+    display: none;
+}
+
+.drag-item img {
+    pointer-events: none; /* Картка ігнорує мишу, контейнер ловить кліки */
+    -webkit-user-drag: none; /* Вимикає нативне перетягування */
+}
+
+.drag-item {
+    position: absolute; /* Як ми домовлялися для стабільності */
+    bottom: 30px;
+    /* Було: left: calc(50% - 40px); */
+    /* Стало (зсуваємо правіше на 60px): */
+    left: calc(50% - 40px + 120px); 
+    width: 200px;
+    height: 80px;
+    cursor: grab;
+    z-index: 1000;
+}
+.drag-item.is-dragging {
+    cursor: grabbing;
+    transition: none;
+    /* Не чіпаємо position: fixed тут, щоб вона не стрибала */
+}
+
+/* Коли миша наведена — "витягується" */
+.drag-item:hover {
+    cursor: grab;
+    transform: scale(1.1); /* Трошки збільшується/піднімається */
+    transition: transform 0.3s ease, bottom 0.3s ease;
+    bottom: 40px; 
+}
+
+.drop-zone {
+    position: absolute; /* Вона нікуди не рухається */
+    width: 200px;
+    height: 150px;
+    /* Жодних flex-властивостей, вони не потрібні при absolute */
+}
+
+.bottom-area {
+    position: relative; /* Батько для absolute-елементів */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding-left: 200px;
+    align-items: center;
+    
+}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 90 150">
+  <defs>
+    <clipPath id="clippath">
+      <path d="M0,124.94c32.17,11.32,58.55,11.66,90,0V20.51H0v104.43Z" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="45" cy="129.49" fx="45" fy="129.49" r="113.3" gradientTransform="translate(0 150) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3e3e48"/>
+      <stop offset=".34" stop-color="#393842"/>
+      <stop offset=".76" stop-color="#2c2a32"/>
+      <stop offset="1" stop-color="#222027"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="11.95" cy="98.14" fx="11.95" fy="98.14" r="6.89" gradientTransform="translate(0 150) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a284c"/>
+      <stop offset=".42" stop-color="#172446"/>
+      <stop offset=".95" stop-color="#101936"/>
+      <stop offset="1" stop-color="#101835"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="44.99" y1="55.57" x2="44.99" y2="30.57" gradientTransform="translate(0 150) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e8b421"/>
+      <stop offset=".41" stop-color="#e6b223"/>
+      <stop offset=".63" stop-color="#e0ab2b"/>
+      <stop offset=".81" stop-color="#d69f39"/>
+      <stop offset=".97" stop-color="#c88f4c"/>
+      <stop offset="1" stop-color="#c58c51"/>
+    </linearGradient>
+  </defs>
+  <g id="Screen_main" data-name="Screen main">
+    <rect id="Background" width="90" height="150" fill="#101010"/>
+    <rect id="Background-2" y="120.2" width="90" height="30"/>
+    <g id="Gray_BG_clipped" data-name="Gray BG clipped">
+      <g clip-path="url(#clippath)">
+        <circle cx="45" cy="20.51" r="113.3" fill="url(#radial-gradient)"/>
+      </g>
+    </g>
+    <g id="Header_group" data-name="Header group">
+      <g isolation="isolate">
+        <text transform="translate(2.76 40.55) scale(.95 1)" fill="#d4def0" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="7" isolation="isolate"><tspan x="0" y="0">щоб зареєструв</tspan></text>
+        <text transform="translate(52 40.55) scale(.95 1)" fill="#d4def0" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="7" isolation="isolate" letter-spacing="-.02em"><tspan x="0" y="0">а</tspan></text>
+        <text transform="translate(55.39 40.55) scale(.95 1)" fill="#d4def0" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="7" isolation="isolate"><tspan x="0" y="0">ти поїздку</tspan></text>
+      </g>
+      <g isolation="isolate">
+        <text transform="translate(2.58 31.49) scale(.95 1)" fill="#72e064" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8.5" isolation="isolate"><tspan x="0" y="0">Пıднесıть засıб опл</tspan></text>
+        <text transform="translate(74.4 31.49) scale(.95 1)" fill="#72e064" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8.5" isolation="isolate" letter-spacing="-.02em"><tspan x="0" y="0">а</tspan></text>
+        <text transform="translate(78.52 31.49) scale(.95 1)" fill="#72e064" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8.5" isolation="isolate"><tspan x="0" y="0">ти</tspan></text>
+      </g>
+      <g id="LeoCard_logo" data-name="LeoCard logo">
+        <rect x="3.61" y="46.82" width="16.68" height="10.09" rx="1" ry="1" fill="url(#radial-gradient-2)" stroke="#111630" stroke-miterlimit="10"/>
+        <path d="M4.96,50.28h.54s-.05,2.27-.06,2.43.06.28.17.29.63,0,.63,0l-.09.48s-.57,0-.83-.02-.42-.31-.42-.55.06-2.64.06-2.64Z" fill="#fff"/>
+        <path d="M6.92,52.81c0,.07.05.17.1.17.06,0,1.07,0,1.07,0h0l-.07.51s-.95.02-1.2,0c-.26-.02-.43-.24-.43-.58s-.02-.86.01-1.23.31-.65.5-.65h1.02c.41,0,.44.3.44.72v.71h-1.43l-.02-.47h.91v-.35s-.07-.09-.12-.09h-.64c-.07,0-.12.05-.12.12,0,.04-.02.81-.02,1.12v.03Z" fill="#fff"/>
+        <path d="M9.89,51.03h-.46c-.43,0-.78.35-.78.78v.9c0,.43.35.78.78.78h.46c.43,0,.78-.35.78-.78v-.9c0-.43-.35-.78-.78-.78ZM10.17,52.7c0,.18-.14.32-.32.32h-.37c-.18,0-.32-.14-.32-.32v-.87c0-.18.14-.32.32-.32h.37c.18,0,.32.14.32.32v.87Z" fill="#fff"/>
+        <path d="M11.8,52.96c-.15,0-.31-.12-.31-.33v-1.54c0-.16.15-.34.3-.34h.9l.09-.59h-1.12c-.42,0-.77.37-.77.82v1.76c0,.45.34.82.77.82h1.08v-.6" fill="#fff"/>
+        <path d="M16.04,53.55v-1.83c0-.08.06-.14.14-.14h.76l.07-.51h-.87c-.33,0-.6.29-.6.64v1.85" fill="#fff"/>
+        <path d="M13.54,51.51l-.09-.55s.91,0,1.19.02.5.29.49.53l-.05,2.05h-1.53c-.22,0-.38-.3-.38-.72s.1-.81.34-.81h1.09l-.02.48h-.73c-.05,0-.2,0-.2.26s.16.28.2.28h.71s.02-1.26.01-1.37c0-.07-.1-.17-.18-.17h-.85Z" fill="#fff"/>
+        <path d="M17.49,53.55c-.27,0-.38-.27-.38-.58v-1.45c0-.25.27-.52.6-.52h.86v.57h-.7c-.11,0-.23.12-.23.29v.88c0,.11.09.29.19.29h.63v-2.76h.55v3.3" fill="#fff"/>
+      </g>
+      <g id="Mastercard_logo" data-name="Mastercard logo">
+        <rect x="27" y="46.17" width="18.46" height="11.16"/>
+        <path d="M31.7,56.43v-.72c0-.27-.17-.45-.45-.46-.15,0-.3.04-.4.2-.08-.13-.2-.2-.38-.2-.12,0-.24.04-.34.17v-.14h-.25v1.15h.25v-.64c0-.2.11-.3.28-.3s.25.11.25.3v.64h.25v-.64c0-.2.12-.3.28-.3s.25.11.25.3v.64h.26ZM35.43,55.28h-.41v-.35h-.25v.35h-.23v.23h.23v.52c0,.27.1.42.4.42.11,0,.23-.03.31-.09l-.07-.21c-.07.04-.16.06-.22.06-.12,0-.17-.08-.17-.19v-.52h.41v-.23h0ZM37.56,55.25c-.14,0-.24.07-.3.17v-.14h-.25v1.15h.25v-.64c0-.19.08-.3.24-.3.05,0,.1,0,.16.03l.08-.24c-.06-.02-.13-.03-.18-.03h0ZM34.34,55.37c-.12-.08-.29-.12-.47-.12-.29,0-.48.14-.48.37,0,.19.14.3.4.34l.12.02c.14.02.2.06.2.12,0,.09-.09.14-.26.14s-.3-.06-.38-.12l-.12.19c.14.1.31.15.5.15.33,0,.52-.16.52-.37s-.15-.31-.4-.34l-.12-.02c-.11,0-.19-.04-.19-.11,0-.08.08-.13.22-.13.15,0,.29.06.36.1l.11-.2v-.02ZM41.03,55.25c-.14,0-.24.07-.3.17v-.14h-.25v1.15h.25v-.64c0-.19.08-.3.24-.3.05,0,.1,0,.16.03l.08-.24c-.06-.02-.13-.03-.18-.03h0ZM37.81,55.85c0,.35.24.6.61.6.17,0,.29-.04.41-.14l-.12-.2c-.09.07-.19.1-.3.1-.2,0-.35-.15-.35-.37s.15-.36.35-.37c.11,0,.21.04.3.1l.12-.2c-.12-.1-.24-.14-.41-.14-.37,0-.61.25-.61.6h0v.02ZM40.15,55.85v-.57h-.25v.14c-.08-.1-.2-.17-.36-.17-.32,0-.57.25-.57.6s.25.6.57.6c.16,0,.28-.06.36-.17v.14h.25v-.57ZM39.22,55.85c0-.2.13-.37.35-.37s.35.16.35.37-.14.37-.35.37-.35-.17-.35-.37h0ZM36.21,55.25c-.34,0-.57.24-.57.6s.24.6.59.6c.17,0,.33-.04.47-.16l-.12-.18c-.1.08-.22.12-.33.12-.16,0-.31-.07-.34-.28h.85v-.1c0-.36-.22-.6-.54-.6h0ZM36.21,55.47c.16,0,.26.1.29.28h-.6c.03-.17.13-.28.3-.28h0ZM42.47,55.85v-1.03h-.25v.6c-.08-.1-.2-.17-.36-.17-.32,0-.57.25-.57.6s.25.6.57.6c.16,0,.28-.06.36-.17v.14h.25v-.57ZM42.76,56.32h.03s.02,0,.02.02l.02.02v.06s0,.02-.02.02l-.02.02h-.06s-.02,0-.02-.02l-.02-.02v-.06s0-.02.02-.02l.02-.02s.02,0,.03,0ZM42.76,56.45h.02s0,0,.02,0c0,0,0,0,0-.02v-.04s0,0,0-.02c0,0,0,0-.02,0h-.04s0,0-.02,0c0,0,0,0,0,.02v.04s0,0,0,.02c0,0,0,0,.02,0h.02ZM42.76,56.36h.02v.02h0s0,0-.02,0l.02.03h-.02l-.02-.03h0v.03h0v-.07h.03ZM42.75,56.37v.02h.02-.02v-.02ZM41.54,55.85c0-.2.13-.37.35-.37s.35.16.35.37-.14.37-.35.37-.35-.17-.35-.37h0ZM33.11,55.85v-.57h-.25v.14c-.08-.1-.2-.17-.36-.17-.32,0-.57.25-.57.6s.25.6.57.6c.16,0,.28-.06.36-.17v.14h.25v-.57ZM32.18,55.85c0-.2.13-.37.35-.37s.35.16.35.37-.14.37-.35.37-.35-.17-.35-.37Z" fill="#fff"/>
+        <g>
+          <rect x="34.52" y="47.81" width="3.12" height="5.61" fill="#f16122"/>
+          <path d="M34.72,50.62c0-1.14.53-2.15,1.36-2.8-.61-.48-1.37-.76-2.2-.76-1.97,0-3.57,1.6-3.57,3.57s1.6,3.57,3.57,3.57c.83,0,1.6-.28,2.2-.76-.83-.65-1.36-1.67-1.36-2.8v-.02Z" fill="#e91d25"/>
+          <path d="M41.85,50.62c0,1.97-1.6,3.57-3.57,3.57-.83,0-1.6-.28-2.2-.76.83-.65,1.36-1.67,1.36-2.8s-.53-2.15-1.36-2.8c.61-.48,1.37-.76,2.2-.76,1.97,0,3.57,1.6,3.57,3.57v-.02Z" fill="#f79e1d"/>
+          <path d="M41.51,52.83v-.11h.05v-.02h-.12v.02h.05v.11h.03,0ZM41.74,52.83v-.14h-.04l-.04.1-.04-.1h-.04v.14h.03v-.1l.04.09h.03l.04-.09v.1h.03,0Z" fill="#f79e1d"/>
+        </g>
+      </g>
+      <g id="Visa_logo" data-name="Visa logo">
+        <path d="M69.73,57.78h-17.47v-11.56h17.47v11.56Z" fill="#fff" fill-rule="evenodd"/>
+        <path d="M58.58,53.88l1.13-3.74h1.01l-1.13,3.74h-1.01ZM58.13,50.14l-.91,1.59c-.23.42-.37.63-.43.89h0c.02-.33-.03-.74-.03-.97l-.1-1.5h-1.7l-.02.1c.44,0,.7.22.77.67l.33,2.97h1.05l2.12-3.74h-1.07ZM66,53.88l-.03-.56h-1.26l-.26.56h-1.1l1.99-3.73h1.35l.34,3.73h-1.03,0ZM65.88,51.67c-.01-.28-.02-.65,0-.88h-.01c-.06.19-.33.74-.44,1.02l-.38.82h.89l-.05-.96h0ZM61.79,53.98c-.71,0-1.19-.23-1.53-.43l.48-.74c.3.17.54.37,1.09.37.18,0,.35-.05.44-.21.14-.24-.03-.37-.43-.6l-.2-.13c-.59-.4-.84-.78-.56-1.44.18-.42.64-.75,1.41-.75.53,0,1.03.23,1.32.45l-.55.65c-.28-.23-.52-.34-.78-.34-.21,0-.38.08-.43.19-.11.21.03.35.34.54l.23.15c.71.45.88.92.7,1.36-.31.76-.91.93-1.54.93h.01ZM67.33,50.64h-.04v-.27h.1c.06,0,.1.02.1.08,0,.05-.03.07-.07.07l.07.12h-.05l-.07-.11h-.04v.11h0ZM67.38,50.49s.06,0,.06-.04c0-.03-.03-.04-.06-.04h-.05v.08h.05ZM67.38,50.75c-.14,0-.24-.1-.24-.24s.11-.24.24-.24.24.1.24.24-.11.24-.24.24ZM67.38,50.31c-.1,0-.19.08-.19.2,0,.11.07.2.19.2.1,0,.18-.08.18-.2s-.08-.2-.18-.2Z" fill="#1d5b98" fill-rule="evenodd"/>
+        <path d="M69.3,55.04h-16.58v2.22h16.58v-2.22h0Z" fill="#e6a738" fill-rule="evenodd"/>
+        <path d="M69.27,46.77h-16.58v2.22h16.58v-2.22ZM68.89,57.1h-.04v-.27h.1c.06,0,.1.02.1.08,0,.05-.03.07-.07.07l.07.12h-.05l-.07-.11h-.04v.11h0ZM68.94,56.95s.06,0,.06-.04c0-.03-.03-.04-.06-.04h-.05v.08h.05ZM68.94,57.2c-.14,0-.24-.1-.24-.24s.11-.24.24-.24.24.1.24.24-.11.24-.24.24ZM68.94,56.76c-.1,0-.19.08-.19.2,0,.11.07.2.19.2.1,0,.18-.08.18-.2s-.08-.2-.18-.2Z" fill="#1d5b98" fill-rule="evenodd"/>
+      </g>
+      <g id="QR_icon" data-name="QR icon">
+        <g>
+          <polygon points="86.34 52.54 86.34 53.64 87.42 53.64 87.42 52.54 88.53 52.54 88.53 55.83 85.24 55.83 85.24 54.72 84.16 54.72 84.16 58.01 83.05 58.01 83.05 52.54 86.34 52.54" fill="#72e064"/>
+          <rect x="87.42" y="56.9" width="1.11" height="1.11" fill="#72e064"/>
+          <rect x="85.24" y="56.9" width="1.11" height="1.11" fill="#72e064"/>
+          <g>
+            <path d="M81.95,52.54v5.47h-5.47v-5.47h5.47ZM77.58,53.64v3.26h3.29v-3.26h-3.29Z" fill="#72e064"/>
+            <rect x="78.66" y="54.72" width="1.11" height="1.11" fill="#72e064"/>
+          </g>
+        </g>
+        <g>
+          <path d="M88.53,45.99v5.47h-5.47v-5.47h5.47ZM84.16,47.07v3.29h3.26v-3.29h-3.26Z" fill="#72e064"/>
+          <rect x="85.24" y="48.17" width="1.11" height="1.08" fill="#72e064"/>
+        </g>
+        <g>
+          <path d="M81.95,45.99v5.47h-5.47v-5.47h5.47ZM77.58,47.07v3.29h3.29v-3.29h-3.29Z" fill="#72e064"/>
+          <rect x="78.66" y="48.17" width="1.11" height="1.08" fill="#72e064"/>
+        </g>
+      </g>
+    </g>
+    <g id="Ticket_add_button" data-name="Ticket add button">
+      <g>
+        <rect x="1.27" y="64.63" width="87.04" height="24.6" rx=".99" ry=".99" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width=".75"/>
+        <path id="Buttonette" d="M88.73,86.46s-3.06-2.48-3.06-9.24,3.06-8.88,3.06-8.88v18.13h0Z" stroke="#000" stroke-miterlimit="10"/>
+      </g>
+      <g isolation="isolate">
+        <text transform="translate(21.59 79.49) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">До</tspan></text>
+        <text transform="translate(30.13 79.49) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">д</tspan></text>
+        <text transform="translate(34 79.49) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate" letter-spacing="-.02em"><tspan x="0" y="0">а</tspan></text>
+        <text transform="translate(37.56 79.49) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">ти квитки</tspan></text>
+      </g>
+      <path d="M13.08,76.9h-2.5v-2.5h-1v2.5h-2.5v1h2.5v2.5h1v-2.5h2.5v-1Z"/>
+    </g>
+    <g id="Ticket_info_button" data-name="Ticket info button">
+      <rect x=".77" y="94.43" width="88.45" height="25" rx=".99" ry=".99" fill="url(#linear-gradient)" stroke="#fff" stroke-miterlimit="10" stroke-width=".75"/>
+      <g isolation="isolate">
+        <text transform="translate(26.4 104.6) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">Інформацıя</tspan></text>
+        <text transform="translate(27.36 114.2) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">про кви</tspan></text>
+        <text transform="translate(53.03 114.2) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate" letter-spacing="-.02em"><tspan x="0" y="0">т</tspan></text>
+        <text transform="translate(55.96 114.2) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8" isolation="isolate"><tspan x="0" y="0">ок</tspan></text>
+      </g>
+      <path id="Buttonette-2" d="M88.95,116.53s-3.06-2.48-3.06-9.24,3.06-8.88,3.06-8.88v18.13h0Z" fill="#e2e6f4" stroke="#fff" stroke-miterlimit="10"/>
+      <g>
+        <path d="M10.36,104.6c0,.5-.41.91-.91.91s-.91-.41-.91-.91.41-.91.91-.91.91.41.91.91Z"/>
+        <path d="M10.41,109.44c0,.22.1.28.35.31h.41v.42h-3.17v-.42h.45c.27-.02.33-.12.35-.32v-2.5c0-.4-.51-.33-.87-.32v-.41l2.49-.09"/>
+      </g>
+    </g>
+    <polygon id="Payment_dir_arrow" data-name="Payment dir arrow" points="33.86 130.09 54.91 130.09 44.39 140.31 33.86 130.09" fill="#72e064"/>
+    <g id="Lang_icon" data-name="Lang icon">
+      <path d="M74.72,142.94v-7.38c4.92-2.17,6.77,2.86,12.3,0v7.38c-4.92,3.01-8-2.53-12.3,0" fill="#3c5896" fill-rule="evenodd"/>
+      <path d="M78.9,138.92c-.04.17-.06.34-.06.51s.02.35.06.51h.72c-.03-.34-.03-.68,0-1.01h-.72ZM79.11,138.42h.6c.07-.31.17-.59.28-.82-.37.18-.67.46-.88.82ZM82.84,138.92h-.72c.03.34.03.68,0,1.01h.72c.04-.16.06-.33.06-.51s-.02-.35-.06-.51h0ZM82.63,138.42c-.2-.35-.51-.64-.88-.82.12.23.22.51.28.82h.6ZM80.14,138.92c-.02.17-.03.34-.03.51s0,.34.03.51h1.47c.04-.34.04-.68,0-1.01h-1.47ZM80.23,138.42h1.28c-.05-.19-.11-.38-.2-.55-.16-.32-.33-.46-.44-.46s-.28.14-.44.46c-.08.16-.15.35-.2.55ZM79.11,140.45c.2.35.51.64.88.82-.12-.23-.22-.51-.28-.82h-.6ZM82.63,140.45h-.6c-.07.31-.16.59-.28.82.37-.18.67-.46.88-.82ZM80.23,140.45c.05.21.12.39.2.55.16.32.33.46.44.46s.28-.14.44-.46c.08-.16.15-.35.2-.55h-1.28ZM80.87,141.97c-1.4,0-2.54-1.14-2.54-2.54s1.14-2.54,2.54-2.54,2.54,1.14,2.54,2.54-1.14,2.54-2.54,2.54Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

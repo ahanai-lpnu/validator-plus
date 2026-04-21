@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g id="Active_validator_button" data-name="Active validator button">
+    <circle cx="18.49" cy="16.29" r="5" fill="#767e80" pointer-events="all"/>
+    <circle cx="18.49" cy="16.29" r="2.75" fill="#fdfdfd" pointer-events="all"/>
+    <g>
+      <circle cx="16.48" cy="11.59" r=".29"/>
+      <circle cx="17.82" cy="11.59" r=".29"/>
+      <circle cx="19.17" cy="11.59" r=".29"/>
+      <circle cx="20.51" cy="11.59" r=".29"/>
+      <circle cx="15.13" cy="12.93" r=".29"/>
+      <circle cx="16.48" cy="12.93" r=".29"/>
+      <circle cx="17.82" cy="12.93" r=".29"/>
+      <circle cx="19.17" cy="12.93" r=".29"/>
+      <circle cx="20.51" cy="12.93" r=".29"/>
+      <circle cx="21.86" cy="12.93" r=".29"/>
+      <circle cx="13.79" cy="14.28" r=".29"/>
+      <circle cx="15.13" cy="14.28" r=".29"/>
+      <circle cx="16.48" cy="14.28" r=".29"/>
+      <circle cx="17.82" cy="14.28" r=".29"/>
+      <circle cx="19.17" cy="14.28" r=".29"/>
+      <circle cx="20.51" cy="14.28" r=".29"/>
+      <circle cx="21.86" cy="14.28" r=".29"/>
+      <circle cx="23.2" cy="14.28" r=".29"/>
+      <circle cx="13.79" cy="15.62" r=".29"/>
+      <circle cx="15.13" cy="15.62" r=".29"/>
+      <circle cx="16.48" cy="15.62" r=".29"/>
+      <circle cx="17.82" cy="15.62" r=".29"/>
+      <circle cx="19.17" cy="15.62" r=".29"/>
+      <circle cx="20.51" cy="15.62" r=".29"/>
+      <circle cx="21.86" cy="15.62" r=".29"/>
+      <circle cx="23.2" cy="15.62" r=".29"/>
+      <circle cx="13.79" cy="16.97" r=".29"/>
+      <circle cx="15.13" cy="16.97" r=".29"/>
+      <circle cx="16.48" cy="16.97" r=".29"/>
+      <circle cx="17.82" cy="16.97" r=".29"/>
+      <circle cx="19.17" cy="16.97" r=".29"/>
+      <circle cx="20.51" cy="16.97" r=".29"/>
+      <circle cx="21.86" cy="16.97" r=".29"/>
+      <circle cx="23.2" cy="16.97" r=".29"/>
+      <circle cx="13.79" cy="18.31" r=".29"/>
+      <circle cx="15.13" cy="18.31" r=".29"/>
+      <circle cx="16.48" cy="18.31" r=".29"/>
+      <circle cx="17.82" cy="18.31" r=".29"/>
+      <circle cx="19.17" cy="18.31" r=".29"/>
+      <circle cx="20.51" cy="18.31" r=".29"/>
+      <circle cx="21.86" cy="18.31" r=".29"/>
+      <circle cx="23.2" cy="18.31" r=".29"/>
+      <circle cx="15.13" cy="19.65" r=".29"/>
+      <circle cx="16.48" cy="19.65" r=".29"/>
+      <circle cx="17.82" cy="19.65" r=".29"/>
+      <circle cx="19.17" cy="19.65" r=".29"/>
+      <circle cx="20.51" cy="19.65" r=".29"/>
+      <circle cx="21.86" cy="19.65" r=".29"/>
+      <circle cx="16.48" cy="21" r=".29"/>
+      <circle cx="17.82" cy="21" r=".29"/>
+      <circle cx="19.17" cy="21" r=".29"/>
+      <circle cx="20.51" cy="21" r=".29"/>
+    </g>
+    <circle cx="18.49" cy="16.29" r="12.5" fill="none" stroke="#cdcdcd" stroke-miterlimit="10" stroke-width="1.5" pointer-events="all"/>
+    <line x1=".07" y1="16.29" x2="6.07" y2="16.29" fill="none" stroke="#cdcdcd" stroke-miterlimit="10" stroke-width="1.5" pointer-events="none"/>
+  </g>
+</svg>
