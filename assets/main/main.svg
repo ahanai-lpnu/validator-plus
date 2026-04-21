@@ -35,8 +35,8 @@
       </g>
     </g>
     <g id="Header_group" data-name="Header group">
-      <text transform="translate(2.76 40.55) scale(.95 1)" fill="#d4def0" font-family="NotoSansDisplay, &apos;Noto Sans Display&apos;" font-size="7"><tspan x="0" y="0">щоб зареєструв</tspan><tspan x="51.83" y="0" letter-spacing="-.02em">а</tspan><tspan x="55.4" y="0">ти поїздку</tspan></text>
-      <text transform="translate(2.58 31.49) scale(.95 1)" fill="#72e064" font-family="NotoSansDisplay, &apos;Noto Sans Display&apos;" font-size="8.5"><tspan x="0" y="0">Пıднесıть засıб опл</tspan><tspan x="75.6" y="0" letter-spacing="-.02em">а</tspan><tspan x="79.94" y="0" letter-spacing="0em">ти</tspan></text>
+      <text transform="translate(2.76 40.55) scale(.95 1)" fill="#d4def0" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="7"><tspan x="0" y="0">щоб зареєструв</tspan><tspan x="51.83" y="0" letter-spacing="-.02em">а</tspan><tspan x="55.4" y="0">ти поїздку</tspan></text>
+      <text transform="translate(2.58 31.49) scale(.95 1)" fill="#72e064" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8.5"><tspan x="0" y="0">Пıднесıть засıб опл</tspan><tspan x="75.6" y="0" letter-spacing="-.02em">а</tspan><tspan x="79.94" y="0" letter-spacing="0em">ти</tspan></text>
       <g id="LeoCard_logo" data-name="LeoCard logo">
         <rect x="3.61" y="46.82" width="16.68" height="10.09" rx="1" ry="1" fill="url(#radial-gradient-2)" stroke="#111630" stroke-miterlimit="10"/>
         <path d="M4.96,50.28h.54s-.05,2.27-.06,2.43.06.28.17.29.63.01.63.01l-.09.48s-.57.01-.83-.02-.42-.31-.42-.55.06-2.64.06-2.64Z" fill="#fff"/>
@@ -85,13 +85,13 @@
     </g>
     <g id="Ticket_add_button" data-name="Ticket add button">
       <rect x=".78" y="64.43" width="88.45" height="25" rx=".99" ry=".99" fill="url(#linear-gradient)" stroke="#fff" stroke-miterlimit="10" stroke-width=".75"/>
-      <text transform="translate(21.59 79.49) scale(.87 1)" fill="#231f20" font-family="NotoSansDisplay, &apos;Noto Sans Display&apos;" font-size="8"><tspan x="0" y="0">До</tspan><tspan x="9.82" y="0" letter-spacing="0em">д</tspan><tspan x="14.27" y="0" letter-spacing="-.02em">а</tspan><tspan x="18.36" y="0">ти квитки</tspan></text>
+      <text transform="translate(21.59 79.49) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8"><tspan x="0" y="0">До</tspan><tspan x="9.82" y="0" letter-spacing="0em">д</tspan><tspan x="14.27" y="0" letter-spacing="-.02em">а</tspan><tspan x="18.36" y="0">ти квитки</tspan></text>
       <path id="Buttonette" d="M88.95,86.46s-3.06-2.48-3.06-9.24,3.06-8.88,3.06-8.88v18.13Z" fill="#e2e6f4" stroke="#fff" stroke-miterlimit="10"/>
       <path d="M13.08,76.9h-2.5v-2.5h-1v2.5h-2.5v1h2.5v2.5h1v-2.5h2.5v-1Z"/>
     </g>
     <g id="Ticket_info_button" data-name="Ticket info button">
       <rect x=".77" y="94.43" width="88.45" height="25" rx=".99" ry=".99" fill="url(#linear-gradient-2)" stroke="#fff" stroke-miterlimit="10" stroke-width=".75"/>
-      <text transform="translate(26.4 104.6) scale(.87 1)" fill="#231f20" font-family="NotoSansDisplay, &apos;Noto Sans Display&apos;" font-size="8"><tspan x="0" y="0">Інформацıя</tspan><tspan x="1.1" y="9.6">про кви</tspan><tspan x="30.61" y="9.6" letter-spacing="-.02em">т</tspan><tspan x="33.98" y="9.6">ок</tspan></text>
+      <text transform="translate(26.4 104.6) scale(.87 1)" fill="#231f20" font-family="DroidSans, &apos;Droid Sans&apos;" font-size="8"><tspan x="0" y="0">Інформацıя</tspan><tspan x="1.1" y="9.6">про кви</tspan><tspan x="30.61" y="9.6" letter-spacing="-.02em">т</tspan><tspan x="33.98" y="9.6">ок</tspan></text>
       <path id="Buttonette-2" data-name="Buttonette" d="M88.95,116.53s-3.06-2.48-3.06-9.24,3.06-8.88,3.06-8.88v18.13Z" fill="#e2e6f4" stroke="#fff" stroke-miterlimit="10"/>
       <g>
         <path d="M10.36,104.6c0,.5-.41.91-.91.91s-.91-.41-.91-.91.41-.91.91-.91.91.41.91.91Z"/>
