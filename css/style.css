@@ -1,28 +1,43 @@
 /* Базові налаштування сторінки */
 body {
     background-color: #000;
-    margin: 0;
-    min-height: 100vh;
+    margin: 0; /* Завжди мінімум на весь екран */
     display: flex;
-    justify-content: center; /* Центруємо по горизонталі */
-    align-items: center;     /* Центруємо по вертикалі */
-    padding: 0;
-    box-sizing: border-box           /* Відступ від країв, щоб не прилипало */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    box-sizing: border-box;
 }
 
 .main-wrapper {
-    display: flex;
-    flex-direction: column; /* Вертикальний стек */
-    align-items: center;    /* Центруємо все по горизонталі */
-    gap: 30px;
     width: 100%;
+    max-width: 460px;
+    /* Прибираємо жорстку height: 100%, замінюємо на min-height */
+    min-height: 850px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center; /* Центруємо по вертикалі всередині */
+    transform-origin: center center; /* Важливо: точка масштабування по центру */
 }
 
 .device-wrapper {
     display: flex;
-    transform: scale(0.9); /* Робимо пристрій трішки меншим (90%) */
-    transform-origin: center;
     gap: 15px;
+    /* Видаляємо transform: scale з CSS, ми робимо це через JS */
+}
+
+* {
+    -webkit-tap-highlight-color: transparent; /* Прибирає голубу рамку при натисканні */
+    touch-action: none; /* Забороняє браузеру намагатися скролити сторінку, коли ти тягнеш картку */
+}
+
+/* Якщо кнопки все ще "виділяються" як текст */
+button, .control-btn {
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .button-panel {
@@ -41,7 +56,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
 }
 
 #screen-image {
@@ -49,8 +63,33 @@ body {
     max-height: 100%;
 }
 
+@media screen and (max-width: 460px) {
+    body {
+        /* Якщо екран телефону вужчий за 460px, ми просто масштабуємо всю сторінку */
+        zoom: 0.75; /* Почни з 0.85 (85%) і підправ під свій пристрій */
+        transform-origin: center;
+    }
+    .screen {
+        width: 90vw;   /* 90% ширини екрана телефону */
+        height: 150vw; /* пропорційно зберігаємо висоту */
+    }
+
+    .drag-item {
+        width: 100px; /* Трошки менше для пальців */
+    }
+
+    .device-wrapper {
+        gap: 5px; /* Менше відступів для економії місця */
+    }
+}
+
 /* Кнопки: прозорі, 115px, клікабельні */
 .control-btn {
+    touch-action: manipulation; /* Забороняє браузеру маніпулювати тачем */
+    -webkit-touch-callout: none !important; 
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent;
     width: 120px;
     height: 120px;
     background: transparent;
@@ -94,6 +133,10 @@ body {
     color: white;
     font-family: 'Noto Sans Display', sans-serif;
     font-size: 28px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 85;
     pointer-events: none;
 }
 
@@ -113,6 +156,10 @@ body {
     color: #E8B423;
     font-family: 'Noto Sans Display', sans-serif;
     font-size: 28px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 85;
     pointer-events: none;
 }
 
@@ -121,11 +168,14 @@ body {
 }
 
 .drag-item img {
+    touch-action: none;
     pointer-events: none; /* Картка ігнорує мишу, контейнер ловить кліки */
     -webkit-user-drag: none; /* Вимикає нативне перетягування */
+    -webkit-touch-callout: none;
 }
 
 .drag-item {
+    touch-action: none;
     position: absolute; /* Як ми домовлялися для стабільності */
     bottom: 30px;
     /* Було: left: calc(50% - 40px); */
@@ -152,17 +202,14 @@ body {
 
 .drop-zone {
     position: absolute; /* Вона нікуди не рухається */
-    width: 200px;
+    width: 220px;
     height: 150px;
     /* Жодних flex-властивостей, вони не потрібні при absolute */
 }
 
 .bottom-area {
     position: relative; /* Батько для absolute-елементів */
-    width: 100%;
+    width: 110%;
     height: 100px;
-    display: flex;
     padding-left: 200px;
-    align-items: center;
-    
 }

@@ -127,7 +127,7 @@ updateDateTime(); // Виклик одразу при старті
 
 // --- ГЛОБАЛЬНІ ЗМІННІ ---
 const item = document.getElementById('draggable-item');
-const zone = document.getElementById('drop-zone');
+const zone = document.querySelector('.drop-zone');
 let contactTimer = null;
 let isTouching = false; 
 let isLocked = false;
@@ -149,7 +149,7 @@ function checkContact() {
         if (!isTouching) {
             isTouching = true;
             contactTimer = setTimeout(() => {
-                changeScreenWithTimeout('assets/entry-suc.svg', 'success.ogg');
+                changeScreenWithTimeout('assets/entry-suc.svg', 'success.ogg', 'assets/symbol-ctls-suc.svg');
             }, 500);
         }
     } else if (isTouching) {
@@ -158,19 +158,31 @@ function checkContact() {
         
         // Тут додаємо перевірку: не викликати FAIL, якщо ми щойно успішно спрацювали
         if (!isLocked) {
-            changeScreenWithTimeout('assets/entry-fal.svg', 'error.ogg');
+            changeScreenWithTimeout('assets/entry-fal.svg', 'error.ogg', 'assets/symbol-ctls-fal.svg');
         }
     }
 }
 
-function changeScreenWithTimeout(newScreen, soundFile) {
+// Знаходимо елемент зони в DOM (переконайся, що він має ID="drop-zone-img")
+const zoneImage = document.querySelector('#drop-zone-img'); 
+
+function changeScreenWithTimeout(newScreen, soundFile, zoneIcon = 'assets/symbol-ctls.svg') {
     isLocked = true;
-    playSound(soundFile); // Граємо звук
-    changeScreen(newScreen); // Міняємо екран
     
-    // Через 1 секунду (1000 мс) повертаємось на головний
+    // Міняємо іконку зони, якщо вона була передана
+    if (zoneImage) {
+        zoneImage.src = zoneIcon;
+    }
+    
+    playSound(soundFile);
+    changeScreen(newScreen);
+    
     setTimeout(() => {
         changeScreen('assets/main/main.svg');
+        // Повертаємо зону до стандартного вигляду
+        if (zoneImage) {
+            zoneImage.src = 'assets/symbol-ctls.svg';
+        }
         isLocked = false;
     }, 2000);
 }
@@ -179,22 +191,34 @@ function changeScreenWithTimeout(newScreen, soundFile) {
 item.addEventListener('pointerdown', (e) => {
     e.preventDefault(); 
     item.setPointerCapture(e.pointerId);
-    
     item.classList.add('is-dragging');
-    
-    // Початкові відступи
-    const offsetX = e.clientX - item.getBoundingClientRect().left;
-    const offsetY = e.clientY - item.getBoundingClientRect().top;
+
+    // 1. Отримуємо масштаб (наприклад, 0.75)
+    const wrapper = document.querySelector('.main-wrapper');
+    const scale = wrapper.getBoundingClientRect().width / 460; // 460 - твоя базова ширина
+
+    // 2. Рахуємо offsetX/Y з урахуванням того, що картка вже масштабована
+    const rect = item.getBoundingClientRect();
+    const offsetX = (e.clientX - rect.left) / scale;
+    const offsetY = (e.clientY - rect.top) / scale;
 
     const moveAt = (e) => {
-        item.style.position = 'fixed'; 
-        item.style.left = (e.clientX - offsetX) + 'px';
-        item.style.top = (e.clientY - offsetY) + 'px';
+        item.style.position = 'fixed';
+        
+        // 3. Компенсуємо скейл у координатах руху
+        // Ділимо координати миші на scale, щоб вони збіглися з "віртуальним" простором
+        const x = (e.clientX / scale) - offsetX;
+        const y = (e.clientY / scale) - offsetY;
+
+        item.style.left = x + 'px';
+        item.style.top = y + 'px';
         item.style.bottom = 'auto';
         item.style.zIndex = '1000';
         
         checkContact();
     };
+
+    document.addEventListener('pointermove', moveAt);
 
     const stopDrag = () => {
         document.removeEventListener('pointermove', moveAt);
@@ -219,45 +243,82 @@ item.addEventListener('pointerdown', (e) => {
     document.addEventListener('pointerup', stopDrag);
 });
 
+// Змінна масштабу
+let currentScale = 1;
+
+function scaleUI() {
+    const wrapper = document.querySelector('.main-wrapper');
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+    
+    // Розраховуємо масштаб, щоб вписати 460x850 в екран
+    const scaleX = winW / 460;
+    const scaleY = winH / 850;
+    currentScale = Math.min(scaleX, scaleY, 1);
+    
+    wrapper.style.transform = `scale(${currentScale})`;
+    wrapper.style.transformOrigin = 'center center';
+}
+
+// У логіці перетягування ділимо координати на масштаб!
+const moveAt = (e) => {
+    // ДІЛИМО зміщення на масштаб, щоб картка рухалася за курсором синхронно
+    const x = (e.clientX - startX) / currentScale;
+    const y = (e.clientY - startY) / currentScale;
+
+    item.style.transform = `translate(${x}px, ${y}px)`;
+    checkContact();
+};
+
 // Логіка подій для панелі (делегування)
-panel.addEventListener('mousedown', (e) => {
+// Ми використовуємо pointer-події, які універсальні для миші та пальця
+panel.addEventListener('pointerdown', (e) => {
     const btn = e.target.closest('.control-btn');
     if (!btn) return;
+    
+    // ПРИМУСОВО: скасовуємо будь-яку реакцію ОС
+    e.preventDefault(); 
     
     const i = btn.dataset.index;
     const config = systemMap[currentScreen];
     
-    // Візуальний ефект при натисканні (hovered екран)
+    // Миттєва зміна іконки (hover)
     if (config && config.hover && config.hover[i]) {
         screenImage.src = config.hover[i];
     }
+
+    // ТУТ ВАЖЛИВИЙ КРОК:
+    // Ми не чекаємо "click", а виконуємо перехід одразу,
+    // якщо це "швидке" натискання, або робимо його на pointerup
+    btn.dataset.pressed = "true";
 });
 
-panel.addEventListener('mouseup', (e) => {
+panel.addEventListener('pointerup', (e) => {
     const btn = e.target.closest('.control-btn');
-    if (!btn) return;
+    if (!btn || btn.dataset.pressed !== "true") return;
     
-    // Повертаємо основний екран
-    screenImage.src = currentScreen;
-});
-
-panel.addEventListener('mouseleave', (e) => {
-    // Якщо вивели курсор за межі кнопки під час натискання
-    screenImage.src = currentScreen;
-}, true);
-
-panel.addEventListener('click', (e) => {
-    const btn = e.target.closest('.control-btn');
-    if (!btn) return;
+    btn.dataset.pressed = "false";
     
+    // Виконуємо дію кліка примусово тут, якщо pointerup пройшов
     const i = btn.dataset.index;
     const config = systemMap[currentScreen];
     
-    // Виконуємо перехід, якщо він заданий
     if (config && config.next && config.next[i]) {
         changeScreen(config.next[i]);
     }
+    
+    // Повертаємо іконку
+    resetScreen();
 });
+
+
+// Забороняємо виклик стандартного контекстного меню на всій панелі
+panel.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+}, false);
+
+
 
 // Запуск
 initPanel();
