@@ -1,40 +1,36 @@
-/* Базові налаштування сторінки */
+* {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+}
+
 body {
     background-color: #000;
-    margin: 0; /* Завжди мінімум на весь екран */
+    margin: 0;
     display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 8vw;
     box-sizing: border-box;
 }
 
 .main-wrapper {
     width: 100%;
     max-width: 460px;
-    /* Прибираємо жорстку height: 100%, замінюємо на min-height */
     min-height: 850px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    justify-content: center; /* Центруємо по вертикалі всередині */
-    transform-origin: center center; /* Важливо: точка масштабування по центру */
+    justify-content: center;
+    transform-origin: center center;
 }
 
 .device-wrapper {
     display: flex;
     gap: 15px;
-    /* Видаляємо transform: scale з CSS, ми робимо це через JS */
 }
 
-* {
-    -webkit-tap-highlight-color: transparent; /* Прибирає голубу рамку при натисканні */
-    touch-action: none; /* Забороняє браузеру намагатися скролити сторінку, коли ти тягнеш картку */
-}
-
-/* Якщо кнопки все ще "виділяються" як текст */
 button, .control-btn {
     user-select: none;
     -webkit-user-select: none;
@@ -44,10 +40,44 @@ button, .control-btn {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    flex-shrink: 0;          /* Кнопки ніколи не будуть стискатися */
+    flex-shrink: 0;
 }
 
-/* Віртуальний екран */
+@media screen and (max-width: 460px) {
+    body {
+        zoom: 0.75;
+        transform-origin: center;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    body {
+        zoom: 0.6;
+        transform-origin: center;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        zoom: 0.3;
+        transform-origin: center;
+    }
+}
+
+@media screen and (max-height: 690px) {
+    body {
+        zoom: 0.6;
+        transform-origin: center;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    body {
+        zoom: 0.3;
+        transform-origin: center;
+    }
+}
+
 .screen {
     position: relative;
     width: 360px;
@@ -63,29 +93,8 @@ button, .control-btn {
     max-height: 100%;
 }
 
-@media screen and (max-width: 460px) {
-    body {
-        /* Якщо екран телефону вужчий за 460px, ми просто масштабуємо всю сторінку */
-        zoom: 0.75; /* Почни з 0.85 (85%) і підправ під свій пристрій */
-        transform-origin: center;
-    }
-    .screen {
-        width: 90vw;   /* 90% ширини екрана телефону */
-        height: 150vw; /* пропорційно зберігаємо висоту */
-    }
-
-    .drag-item {
-        width: 100px; /* Трошки менше для пальців */
-    }
-
-    .device-wrapper {
-        gap: 5px; /* Менше відступів для економії місця */
-    }
-}
-
-/* Кнопки: прозорі, 115px, клікабельні */
 .control-btn {
-    touch-action: manipulation; /* Забороняє браузеру маніпулювати тачем */
+    touch-action: manipulation;
     -webkit-touch-callout: none !important; 
     -webkit-user-select: none !important;
     user-select: none !important;
@@ -102,7 +111,6 @@ button, .control-btn {
     align-items: center;
 }
 
-/* Іконка всередині кнопки */
 .btn-icon {
     width: 100%;
     height: 100%;
@@ -110,7 +118,6 @@ button, .control-btn {
     display: block;
 }
 
-/* Текст-заглушка (якщо SVG не завантажилось) */
 .fallback-text {
     position: absolute;
     font-size: 12px;
@@ -123,12 +130,12 @@ button, .control-btn {
 
 .date-time-overlay {
     position: absolute;
-    top: 6px;   /* Твоє значення */
-    left: 14px;  /* Відступ від лівого краю екрана */
-    right: 12px; /* Відступ від правого краю екрана */
+    top: 6px;
+    left: 14px;
+    right: 12px;
     display: flex;
     box-sizing: border-box;
-    justify-content: space-between; /* Час ліворуч, дата праворуч */
+    justify-content: space-between;
     align-items: center;
     color: white;
     font-family: 'Noto Sans Display', sans-serif;
@@ -146,12 +153,12 @@ button, .control-btn {
 
 .route-info-overlay {
     position: absolute;
-    top: 40px;   /* Твоє значення */
-    left: 14px;  /* Відступ від лівого краю екрана */
-    right: 12px; /* Відступ від правого краю екрана */
+    top: 40px;
+    left: 14px;
+    right: 12px;
     display: flex;
     box-sizing: border-box;
-    justify-content: space-between; /* Час ліворуч, дата праворуч */
+    justify-content: space-between;
     align-items: center;
     color: #E8B423;
     font-family: 'Noto Sans Display', sans-serif;
@@ -169,17 +176,15 @@ button, .control-btn {
 
 .drag-item img {
     touch-action: none;
-    pointer-events: none; /* Картка ігнорує мишу, контейнер ловить кліки */
-    -webkit-user-drag: none; /* Вимикає нативне перетягування */
+    pointer-events: none;
+    -webkit-user-drag: none;
     -webkit-touch-callout: none;
 }
 
 .drag-item {
     touch-action: none;
-    position: absolute; /* Як ми домовлялися для стабільності */
+    position: absolute;
     bottom: 30px;
-    /* Було: left: calc(50% - 40px); */
-    /* Стало (зсуваємо правіше на 60px): */
     left: calc(50% - 40px + 120px); 
     width: 200px;
     height: 80px;
@@ -189,26 +194,23 @@ button, .control-btn {
 .drag-item.is-dragging {
     cursor: grabbing;
     transition: none;
-    /* Не чіпаємо position: fixed тут, щоб вона не стрибала */
 }
 
-/* Коли миша наведена — "витягується" */
 .drag-item:hover {
     cursor: grab;
-    transform: scale(1.1); /* Трошки збільшується/піднімається */
+    transform: scale(1.1);
     transition: transform 0.3s ease, bottom 0.3s ease;
     bottom: 40px; 
 }
 
 .drop-zone {
-    position: absolute; /* Вона нікуди не рухається */
+    position: absolute;
     width: 220px;
     height: 150px;
-    /* Жодних flex-властивостей, вони не потрібні при absolute */
 }
 
 .bottom-area {
-    position: relative; /* Батько для absolute-елементів */
+    position: relative;
     width: 110%;
     height: 100px;
     padding-left: 200px;

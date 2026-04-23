@@ -1,8 +1,12 @@
-// Обираємо елементи
 const panel = document.querySelector('.button-panel');
 const screenImage = document.getElementById('screen-image');
+const item = document.getElementById('draggable-item');
+const zone = document.querySelector('.drop-zone');
+let contactTimer = null;
+let isTouching = false; 
+let isLocked = false;
+let currentScale = 1;
 
-// Мапа системи: стани екранів та логіка кнопок
 const systemMap = {
     'assets/main/main.svg': {
         buttons: [false, false, true, true, true],
@@ -38,26 +42,23 @@ const systemMap = {
 
 let currentScreen = 'assets/main/main.svg';
 
-// Функція програвання звуку
 function playSound(file) {
     const audio = new Audio(`assets/sounds/${file}`);
     audio.play().catch(e => console.log("Звук заблоковано браузером:", e));
 }
-// Функція оновлення іконок кнопок
+
 function updateButtons() {
     const config = systemMap[currentScreen];
     const buttons = document.querySelectorAll('.control-btn');
     
     buttons.forEach((btn, index) => {
         const img = btn.querySelector('.btn-icon');
-        // Якщо конфіг дозволяє, ставимо іконку ON/OFF
         if (config) {
             img.src = config.buttons[index] ? 'assets/button-on.svg' : 'assets/button-off.svg';
         }
     });
 }
 
-// Список екранів, на яких має бути дата/час
 const screensWithDate = [
     'assets/main/main.svg', 
     'assets/main/main-hovered-2.svg', 
@@ -68,7 +69,6 @@ function updateDateTimeVisibility(currentSrc) {
     const dateTimeDisplay = document.getElementById('date-time-display');
     const routeInfoDisplay = document.getElementById('route-info-display');
     
-    // Перевіряємо, чи є поточний екран у списку
     if (screensWithDate.includes(currentSrc)) {
         dateTimeDisplay.classList.remove('hidden');
     } else {
@@ -82,21 +82,18 @@ function updateDateTimeVisibility(currentSrc) {
     }
 }
 
-// Оновлюємо функцію перемикання екрана
 function changeScreen(newScreen) {
     if (newScreen && systemMap[newScreen]) {
         currentScreen = newScreen;
         screenImage.src = currentScreen;
         updateButtons();
-        
-        // Викликаємо перевірку видимості при кожній зміні екрана
+
         updateDateTimeVisibility(newScreen);
     }
 }
 
-// Створення кнопок на старті
 function initPanel() {
-    panel.innerHTML = ''; // Очистка перед генерацією
+    panel.innerHTML = '';
     for (let i = 0; i < 5; i++) {
         const btn = document.createElement('button');
         btn.className = 'control-btn';
@@ -111,7 +108,6 @@ function initPanel() {
     }
 }
 
-// Функція оновлення часу
 function updateDateTime() {
     const timePart = document.getElementById('time-part');
     const datePart = document.getElementById('date-part');
@@ -121,20 +117,10 @@ function updateDateTime() {
     datePart.innerText = now.toLocaleDateString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric' });
 }
 
-// Запускаємо оновлення часу кожну секунду
 setInterval(updateDateTime, 1000);
-updateDateTime(); // Виклик одразу при старті
+updateDateTime();
 
-// --- ГЛОБАЛЬНІ ЗМІННІ ---
-const item = document.getElementById('draggable-item');
-const zone = document.querySelector('.drop-zone');
-let contactTimer = null;
-let isTouching = false; 
-let isLocked = false;
-
-// --- ФУНКЦІЯ ПЕРЕВІРКИ (тільки логіка зіткнення) ---
 function checkContact() {
-    // Якщо інтерфейс "заблокований" — нічого не робимо
     if (!item || !zone || isLocked) return;
 
     const itemRect = item.getBoundingClientRect();
@@ -156,20 +142,17 @@ function checkContact() {
         isTouching = false;
         clearTimeout(contactTimer);
         
-        // Тут додаємо перевірку: не викликати FAIL, якщо ми щойно успішно спрацювали
         if (!isLocked) {
             changeScreenWithTimeout('assets/entry-fal.svg', 'error.ogg', 'assets/symbol-ctls-fal.svg');
         }
     }
 }
 
-// Знаходимо елемент зони в DOM (переконайся, що він має ID="drop-zone-img")
 const zoneImage = document.querySelector('#drop-zone-img'); 
 
 function changeScreenWithTimeout(newScreen, soundFile, zoneIcon = 'assets/symbol-ctls.svg') {
     isLocked = true;
-    
-    // Міняємо іконку зони, якщо вона була передана
+
     if (zoneImage) {
         zoneImage.src = zoneIcon;
     }
@@ -179,7 +162,6 @@ function changeScreenWithTimeout(newScreen, soundFile, zoneIcon = 'assets/symbol
     
     setTimeout(() => {
         changeScreen('assets/main/main.svg');
-        // Повертаємо зону до стандартного вигляду
         if (zoneImage) {
             zoneImage.src = 'assets/symbol-ctls.svg';
         }
@@ -187,7 +169,6 @@ function changeScreenWithTimeout(newScreen, soundFile, zoneIcon = 'assets/symbol
     }, 2000);
 }
 
-// --- ЛОГІКА ПЕРЕТЯГУВАННЯ ---
 item.addEventListener('pointerdown', (e) => {
     e.preventDefault(); 
     item.setPointerCapture(e.pointerId);
@@ -195,18 +176,15 @@ item.addEventListener('pointerdown', (e) => {
 
     // 1. Отримуємо масштаб (наприклад, 0.75)
     const wrapper = document.querySelector('.main-wrapper');
-    const scale = wrapper.getBoundingClientRect().width / 460; // 460 - твоя базова ширина
+    const scale = wrapper.getBoundingClientRect().width / 460;
 
-    // 2. Рахуємо offsetX/Y з урахуванням того, що картка вже масштабована
     const rect = item.getBoundingClientRect();
     const offsetX = (e.clientX - rect.left) / scale;
     const offsetY = (e.clientY - rect.top) / scale;
 
     const moveAt = (e) => {
         item.style.position = 'fixed';
-        
-        // 3. Компенсуємо скейл у координатах руху
-        // Ділимо координати миші на scale, щоб вони збіглися з "віртуальним" простором
+
         const x = (e.clientX / scale) - offsetX;
         const y = (e.clientY / scale) - offsetY;
 
@@ -225,8 +203,7 @@ item.addEventListener('pointerdown', (e) => {
         document.removeEventListener('pointerup', stopDrag);
         
         item.classList.remove('is-dragging');
-        
-        // Ось тут ми повертаємо картку на базу:
+
         item.style.position = '';
         item.style.left = '';
         item.style.top = '';
@@ -243,15 +220,11 @@ item.addEventListener('pointerdown', (e) => {
     document.addEventListener('pointerup', stopDrag);
 });
 
-// Змінна масштабу
-let currentScale = 1;
-
 function scaleUI() {
     const wrapper = document.querySelector('.main-wrapper');
     const winW = window.innerWidth;
     const winH = window.innerHeight;
     
-    // Розраховуємо масштаб, щоб вписати 460x850 в екран
     const scaleX = winW / 460;
     const scaleY = winH / 850;
     currentScale = Math.min(scaleX, scaleY, 1);
@@ -260,9 +233,7 @@ function scaleUI() {
     wrapper.style.transformOrigin = 'center center';
 }
 
-// У логіці перетягування ділимо координати на масштаб!
 const moveAt = (e) => {
-    // ДІЛИМО зміщення на масштаб, щоб картка рухалася за курсором синхронно
     const x = (e.clientX - startX) / currentScale;
     const y = (e.clientY - startY) / currentScale;
 
@@ -270,26 +241,20 @@ const moveAt = (e) => {
     checkContact();
 };
 
-// Логіка подій для панелі (делегування)
-// Ми використовуємо pointer-події, які універсальні для миші та пальця
+
 panel.addEventListener('pointerdown', (e) => {
     const btn = e.target.closest('.control-btn');
     if (!btn) return;
     
-    // ПРИМУСОВО: скасовуємо будь-яку реакцію ОС
     e.preventDefault(); 
     
     const i = btn.dataset.index;
     const config = systemMap[currentScreen];
     
-    // Миттєва зміна іконки (hover)
     if (config && config.hover && config.hover[i]) {
         screenImage.src = config.hover[i];
     }
 
-    // ТУТ ВАЖЛИВИЙ КРОК:
-    // Ми не чекаємо "click", а виконуємо перехід одразу,
-    // якщо це "швидке" натискання, або робимо його на pointerup
     btn.dataset.pressed = "true";
 });
 
@@ -298,8 +263,7 @@ panel.addEventListener('pointerup', (e) => {
     if (!btn || btn.dataset.pressed !== "true") return;
     
     btn.dataset.pressed = "false";
-    
-    // Виконуємо дію кліка примусово тут, якщо pointerup пройшов
+
     const i = btn.dataset.index;
     const config = systemMap[currentScreen];
     
@@ -307,19 +271,14 @@ panel.addEventListener('pointerup', (e) => {
         changeScreen(config.next[i]);
     }
     
-    // Повертаємо іконку
     resetScreen();
 });
 
-
-// Забороняємо виклик стандартного контекстного меню на всій панелі
 panel.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     return false;
 }, false);
 
 
-
-// Запуск
 initPanel();
 updateButtons();
