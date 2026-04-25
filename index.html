@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -15,39 +14,37 @@
 <div id="app">
     <div class="main-wrapper">
         <div class="device-wrapper">
-            <div class="screen" style="position: relative;">
-                <img id="screen-image" src="assets/main/main.svg" alt="Екран">
 
-                <div id="date-time-display" class="date-time-overlay">
+            <div class="screen">
+                <div id="screen-container"></div>
+
+                <div id="date-time-display" class="date-time-overlay hidden">
                     <span id="time-part"></span>
                     <span id="date-part"></span>
                 </div>
-
-                <div id="route-info-display" class="route-info-overlay">
+                <div id="route-info-display" class="route-info-overlay hidden">
                     <span id="mean-part">ТРОЛЕЙБУС</span>
                     <span id="route-number-part">Маршрут 22</span>
                 </div>
-
             </div>
 
             <div class="button-panel">
             </div>
+
         </div>
 
-            <div class="bottom-area">
-                <div class="drop-zone">
-                    <img src="assets/symbol-ctls.svg" id="drop-zone-img" alt="zone">
-                </div>
-                <div id="draggable-item" class="drag-item">
-                    <img src="assets/card.svg" alt="Card">
-                </div>
+        <div class="bottom-area">
+            <div class="drop-zone">
+                <div id="drop-zone-container"></div>
+            </div>
+
+            <div id="draggable-item" class="drag-item">
+                <div id="card-container"></div>
             </div>
         </div>
+
     </div>
 </div>
-
 <script src="script.js"></script>
-
 </body>
-
 </html>

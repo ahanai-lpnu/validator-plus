@@ -3,21 +3,26 @@
     touch-action: none;
 }
 
+svg text,
+svg tspan,
+svg foreignObject {
+    font-family: 'Noto Sans Display', sans-serif !important;
+}
+
 body {
     background-color: #000;
     margin: 0;
     display: flex;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 8vw;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
 .main-wrapper {
     width: 100%;
     max-width: 460px;
-    min-height: 850px; 
+    min-height: 850px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +36,36 @@ body {
     gap: 15px;
 }
 
-button, .control-btn {
+.screen {
+    position: relative;
+    width: 360px;
+    height: 600px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#screen-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen-container svg,
+#screen-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+button,
+.control-btn {
     user-select: none;
     -webkit-user-select: none;
 }
@@ -43,61 +77,11 @@ button, .control-btn {
     flex-shrink: 0;
 }
 
-@media screen and (max-width: 460px) {
-    body {
-        zoom: 0.75;
-        transform-origin: center;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    body {
-        zoom: 0.6;
-        transform-origin: center;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    body {
-        zoom: 0.3;
-        transform-origin: center;
-    }
-}
-
-@media screen and (max-height: 690px) {
-    body {
-        zoom: 0.6;
-        transform-origin: center;
-    }
-}
-
-@media screen and (max-height: 550px) {
-    body {
-        zoom: 0.3;
-        transform-origin: center;
-    }
-}
-
-.screen {
-    position: relative;
-    width: 360px;
-    height: 600px;
-    border: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#screen-image {
-    max-width: 100%;
-    max-height: 100%;
-}
-
 .control-btn {
     touch-action: manipulation;
-    -webkit-touch-callout: none !important; 
-    -webkit-user-select: none !important;
-    user-select: none !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
     -webkit-tap-highlight-color: transparent;
     width: 120px;
     height: 120px;
@@ -111,21 +95,20 @@ button, .control-btn {
     align-items: center;
 }
 
-.btn-icon {
+.btn-icon-container {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-icon-container svg,
+.btn-icon-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
     object-fit: contain;
-    display: block;
-}
-
-.fallback-text {
-    position: absolute;
-    font-size: 12px;
-    display: none; 
-}
-
-.btn-icon:invalid + .fallback-text {
-    display: block;
 }
 
 .date-time-overlay {
@@ -138,17 +121,13 @@ button, .control-btn {
     justify-content: space-between;
     align-items: center;
     color: white;
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif !important;
     font-size: 28px;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 85;
     pointer-events: none;
-}
-
-.date-time-overlay.hidden {
-    display: none;
 }
 
 .route-info-overlay {
@@ -161,7 +140,7 @@ button, .control-btn {
     justify-content: space-between;
     align-items: center;
     color: #E8B423;
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif !important;
     font-size: 28px;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -170,37 +149,16 @@ button, .control-btn {
     pointer-events: none;
 }
 
+.date-time-overlay.hidden,
 .route-info-overlay.hidden {
     display: none;
 }
 
-.drag-item img {
-    touch-action: none;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    -webkit-touch-callout: none;
-}
-
-.drag-item {
-    touch-action: none;
-    position: absolute;
-    bottom: 30px;
-    left: calc(50% - 40px + 120px); 
-    width: 200px;
-    height: 80px;
-    cursor: grab;
-    z-index: 1000;
-}
-.drag-item.is-dragging {
-    cursor: grabbing;
-    transition: none;
-}
-
-.drag-item:hover {
-    cursor: grab;
-    transform: scale(1.1);
-    transition: transform 0.3s ease, bottom 0.3s ease;
-    bottom: 40px; 
+.bottom-area {
+    position: relative;
+    width: 110%;
+    height: 100px;
+    padding-left: 200px;
 }
 
 .drop-zone {
@@ -209,9 +167,72 @@ button, .control-btn {
     height: 150px;
 }
 
-.bottom-area {
-    position: relative;
-    width: 110%;
-    height: 100px;
-    padding-left: 200px;
+#drop-zone-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drop-zone-container svg,
+#drop-zone-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.drag-item {
+    touch-action: none;
+    position: absolute;
+
+    left: calc(50% - 40px + 120px);
+    width: 200px;
+    height: 160px;
+    cursor: grab;
+    z-index: 1000;
+}
+
+.drag-item.is-dragging {
+    cursor: grabbing !important;
+    transition: none;
+}
+
+.drag-item:not(.is-dragging):hover {
+    cursor: grab;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, bottom 0.3s ease;
+}
+
+#card-container {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+}
+
+#card-container svg,
+#card-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+@media screen and (max-width: 460px) {
+    body { zoom: 0.75; transform-origin: center; }
+}
+@media screen and (max-width: 380px) {
+    body { zoom: 0.6;  transform-origin: center; }
+}
+@media screen and (max-width: 300px) {
+    body { zoom: 0.3;  transform-origin: center; }
+}
+@media screen and (max-height: 690px) {
+    body { zoom: 0.6;  transform-origin: center; }
+}
+@media screen and (max-height: 440px) {
+    body { zoom: 0.3;  transform-origin: center; }
 }
